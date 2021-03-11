@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Type</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            background-color: #00B4DB;
+        }
+
+        .box {
+            width: 60vw;
+            height: 75vh;
+            /* background: #C6FFDD; */
+            margin: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            width: 20%;
+            height: 43px;
+            text-align: center;
+            margin: auto;
+            cursor: pointer;
+            /* background: #212121; */
+            background: #f7797d;
+            border: 2px solid white;
+            border-radius: 5px;
+            outline: none;
+            color: white;
+            padding: 7px;
+            font-family: sans-serif;
+            font-weight: bold;
+            transition: all 0.5s;
+        }
+
+        .btn:hover {
+            color: #f7797d;
+            border-color: #f7797d;
+            background-color: #fff;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1 style="text-align: center; color: #544a7d; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Different Event Types In JavaScript</h1>
+    <div class="box">
+      <!--  By Using Inline Alert  -->
+        <button class="btn" onclick="alert('I am Awesome BUT No One Use Me!😥')"> By Using Inline Alert </button>
+
+      <!--  By Using Calling a function  -->
+        <button class="btn" onclick=functionCalling()> By Using Calling a function </button>
+
+      <!--  By Using Inline Events  -->
+      <button class="btn" id="ThirdWay"> By Using Inline Events </button>
+      
+      <!--  By Using EventListeners  -->
+        <button class="btn" id="ForthWay"> By Using EventListeners </button>
+    </div>
+
+
+
+<script>
+
+    // 2nd Way OF Writing Event Function By Using Calling a function
+    const functionCalling  = ()=>{
+        alert('Most Common Way Of Writing functions😃')
+    }
+
+
+    // 3rd Way OF Writing Event Function By Using Inline Events
+    const ThirdWay = document.getElementById('ThirdWay');
+    ThirdWay.onclick = function(){
+        alert('Most Common Way Of Writing functions Again😃');
+    }
+    /* NOTE: We Can Not Write event function Multiple times while Using Inline Events BUT Can write By Using EventListeners as Below, Please Check Yourself*/
+    // ThirdWay.onclick = function(){
+    //     console.log('Most Common Way Of Writing functions Again😃');
+    //     console.log('2nd Time Calling😃');
+    // }
+
+
+    // 4th Way OF Writing Event Function By Using EventListeners
+    const ForthWay = document.querySelector('#ForthWay');
+    ForthWay.addEventListener('click', () =>{
+        alert('Best Way Of Writing functions 😍');
+    })
+    /* NOTE: We Can Write event function Multiple times in EventListeners BUT Not while Using with Inline Events as Above, Please Check Yourself*/
+    // ForthWay.addEventListener('click', () =>{
+    //     console.log('Best Way Of Writing functions 😍');
+    //     console.log('2ns Time Calling 😍');
+    // })
+
+
+    /* CONCLUSION of 3rd & 4th:-
+            This is because addEventListener does not overwrite existing event hendlers, whereas onclick or inline event overwrite any existing event handlers.
+
+            The other significant difference is that onclick will always work, whereas addEventListener does not work in Internet Explorer before version 9.
+    */
+
+</script>
+
+
+
+
+
+</body>
+
+</html>

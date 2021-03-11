@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<style>
+    body {}
+
+    #box {
+        width: 17rem;
+        height: 15rem;
+        background-color: orangered;
+        margin: auto;
+        margin-top: 8rem;
+        text-align: center;
+        color: #FFEFBA;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+</style>
+
+<body>
+
+    <div id="box">    </div>
+
+
+
+
+    <script>
+        const mouseMove = document.getElementById('box')
+        mouseMove.addEventListener('mouseenter', () =>{
+            mouseMove.style.background = '#FF0099';
+            mouseMove.innerHTML = 'Mouse Enter Bro!';
+        })
+        mouseMove.addEventListener('mouseleave', () =>{
+            mouseMove.style.background = 'red';
+            mouseMove.innerHTML = 'Mouse Move Bro!'
+        })
+    </script>
+
+</body>
+
+</html>
